@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find rusty_description)/launch/controller.yaml" command="load"/>
+<node args="LW1_position_controller LW2_position_controller RW1_position_controller RW2_position_controller joint_state_controller " name="controller_spawner" ns="rusty" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+  <remap from="/joint_states" to="/rusty/joint_states"/>
+</node>
+
+</launch>

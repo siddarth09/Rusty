@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<robot name="rusty" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rusty_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rusty_description)/urdf/rusty.trans" />
+<xacro:include filename="$(find rusty_description)/urdf/rusty.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="8.409049165028714e-05 3.4996765999578193e-17 0.06807862113313023"/>
+    <mass value="44.90720213069293"/>
+    <inertia ixx="0.365047" ixy="0.0" ixz="-0.00017" iyy="0.92188" iyz="0.0" izz="1.178181"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="LW1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-6.689093723366568e-15 0.012500576949354275 2.0816681711721685e-17"/>
+    <mass value="0.10446939585417521"/>
+    <inertia ixx="4.3e-05" ixy="-0.0" ixz="0.0" iyy="7.5e-05" iyz="0.0" izz="4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.15 -0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.15 -0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="LW2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="6.661338147750939e-15 0.01250057694935433 6.938893903907228e-18"/>
+    <mass value="0.10446939585417522"/>
+    <inertia ixx="4.3e-05" ixy="0.0" ixz="0.0" iyy="7.5e-05" iyz="-0.0" izz="4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="RW1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.0531133177191805e-15 -0.012500576949354358 1.3877787807814457e-17"/>
+    <mass value="0.1044693958541752"/>
+    <inertia ixx="4.3e-05" ixy="-0.0" ixz="0.0" iyy="7.5e-05" iyz="0.0" izz="4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.15 0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.15 0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="RW2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.0531133177191805e-15 -0.012500576949354358 1.3877787807814457e-17"/>
+    <mass value="0.1044693958541752"/>
+    <inertia ixx="4.3e-05" ixy="0.0" ixz="0.0" iyy="7.5e-05" iyz="-0.0" izz="4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 0.1575 -0.038"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Holder_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.445233212745621e-17 0.0 0.012500000000000011"/>
+    <mass value="25.69775961700859"/>
+    <inertia ixx="0.165882" ixy="0.0" ixz="-0.0" iyy="0.4688" iyz="0.0" izz="0.632005"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.133"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.133"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.007620009828649854 7.987355384612048e-05 -0.0030000000000000165"/>
+    <mass value="0.008257286244679604"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.235 -0.0 -0.126"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.235 -0.0 -0.126"/>
+    <geometry>
+      <mesh filename="package://rusty_description/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="LW1" type="continuous">
+  <origin rpy="0 0 0" xyz="0.15 0.1575 0.038"/>
+  <parent link="base_link"/>
+  <child link="LW1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="LW2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.15 0.1575 0.038"/>
+  <parent link="base_link"/>
+  <child link="LW2_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="RW1" type="continuous">
+  <origin rpy="0 0 0" xyz="0.15 -0.1575 0.038"/>
+  <parent link="base_link"/>
+  <child link="RW1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="RW2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.15 -0.1575 0.038"/>
+  <parent link="base_link"/>
+  <child link="RW2_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="holder" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.133"/>
+  <parent link="base_link"/>
+  <child link="Holder_1"/>
+</joint>
+
+<joint name="Lidar" type="fixed">
+  <origin rpy="0 0 0" xyz="0.235 0.0 0.126"/>
+  <parent link="base_link"/>
+  <child link="Lidar_1"/>
+</joint>
+
+</robot>
