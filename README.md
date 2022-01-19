@@ -14,3 +14,14 @@ cd ..
 catkin_make
 ```
 
+## KALMAN FILTER 
+
+This folder contains basic understanding of the kalman filter for 1-Dimensiona and multidimensional filters.
+
+> The kalman filter is basically used to localise a robot in its environment by given sensor measurements.
+> STEPS INVOLVED:
+- Measurement update
+- State transition update or motion update 
+
+## NAVIGATION STACK
+- [ ] https://github.com/siddarth09/Rusty/issues/2 :fist_raised:	
