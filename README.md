@@ -16,7 +16,7 @@ catkin_make
 
 ## KALMAN FILTER 
 
-This folder contains basic understanding of the kalman filter for 1-Dimensiona and multidimensional filters.
+This folder contains basic understanding of the kalman filter for 1-Dimensional and multidimensional filters.
 
 > The kalman filter is basically used to localise a robot in its environment by given sensor measurements.
 > STEPS INVOLVED:
