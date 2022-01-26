@@ -21,7 +21,10 @@ This folder contains basic understanding of the kalman filter for 1-Dimensiona a
 > The kalman filter is basically used to localise a robot in its environment by given sensor measurements.
 > STEPS INVOLVED:
 - Measurement update
-- State transition update or motion update 
+- State transition update or motion update
+
+### LINK FOR THE RTAB-MAP DB file
+- https://drive.google.com/file/d/1y0lfdK79yz4FiUo4Beewb7KaL9SzsphI/view?usp=sharing
 
 ## NAVIGATION STACK
 - [ ] https://github.com/siddarth09/Rusty/issues/2 :fist_raised:	
