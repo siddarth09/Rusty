@@ -65,6 +65,6 @@
         <remap from="odom" to="/odom"/>
     </node>
   </group>
-  <node pkg="tf" type="static_transform_publisher" name="base_to_camera" args="0 0 0 0 0 0 /base_link /Camera_link_optical 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_to_camera" args="0 0 0 -1.57 0 -1.57 /base_link /Camera_link_optical 100"/>
   <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0 0 0 0 0 0 /base_link /Lidar_1 100"/>
 </launch>
