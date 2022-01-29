@@ -77,5 +77,5 @@ roslaunch rusty navigation.launch
   or
   ```bash
   
-  ./HomeService.sh
+  ./homeservice.sh
   ```
