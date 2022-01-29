@@ -37,7 +37,7 @@ This mapping is one type of Graph-based SLAM which involves two mechanisms
 - https://drive.google.com/file/d/1NHoYihwiK1kxBYBL2nZ9Up3olNRXoLSu/view?usp=sharing
 
 ## SLAM
-Simultaneous localization and mapping (SLAM) is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent's location within it. Here we are using frontier mapping, gmapping, Hector-slam packages to map the given environment for navigation purposes
+Simultaneous localization and mapping (SLAM) is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent's location within it. Here we are using RTAB-mapping, gmapping, Karto-slam packages to map the given environment for navigation purposes
 
 To run Gmapping package
 ``` bash
