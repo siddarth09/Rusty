@@ -68,3 +68,5 @@ roslaunch rusty navigation.launch
   roslaunch rusty gazbeo.launch world_name:= <path-to-your-desired-world>
   ```
  
+# USE CASES
+  ## CASE 1: HOME SERVICE ROBOT
