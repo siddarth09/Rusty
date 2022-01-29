@@ -206,3 +206,8 @@ catkin_install_python(PROGRAMS
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_executable(PickandDrop src/pick_obj.cpp)
+target_link_libraries(PickandDrop ${catkin_LIBRARIES})
+
+add_executable(Pickobj src/virtual_box.cpp)
+target_link_libraries(Pickobj ${catkin_LIBRARIES})
