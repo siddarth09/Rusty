@@ -70,3 +70,7 @@ roslaunch rusty navigation.launch
  
 # USE CASES
   ## CASE 1: HOME SERVICE ROBOT
+  Here rusty is used to pick and place virtual objects from one location to another.
+  ```bash
+  roslaunch rusty HomeService.launch
+  ```
