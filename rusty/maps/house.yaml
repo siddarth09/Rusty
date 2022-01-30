@@ -1,4 +1,4 @@
-image: /home/siddarth/rosworkspace/src/rusty/maps/house.pgm
+image: ./house.pgm
 resolution: 0.050000
 origin: [-25.520343, -10.495734, 0.000000]
 negate: 0
