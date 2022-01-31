@@ -1,82 +1,121 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
+// #include <nav_msgs/Odometry.h>
+#include <std_msgs/UInt8.h>
 
-#include <iostream>
-#include <nav_msgs/Odometry.h>
+u_int8_t state=0;
 
-
-
-float po;
-void posecallback(const nav_msgs::Odometry::ConstPtr& msg)
+void goalCallback(const std_msgs::UInt8::ConstPtr& msg)
 {
-    po=msg->pose.pose.position.x;
-    std::cout<<"POSITION:"<<po;
+   state = msg->data;
+   return;
 }
 
-int main(int argc,char **argv)
+int main( int argc, char** argv )
 {
-  ros::init(argc, argv, "basic_shapes");
+  ros::init(argc, argv, "add_markers");
+
   ros::NodeHandle n;
-  ros::Rate r(1);
+  ros::Rate r(5);
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
+  ros::Subscriber sub = n.subscribe("/goal", 1, goalCallback);
+  bool service_done = false;
 
-  ros::Subscriber sub=n.subscribe("odom",10,posecallback);
-
+  // Set our initial shape type to be a cube
   uint32_t shape = visualization_msgs::Marker::CUBE;
-  float position_arr[2]={-6.0,10.0};
-  for (int i=0;i<3;i++)
-  {
-    if(po<=position_arr[i])
+
+  ROS_INFO("Subscribed to desired goal-position");
+
+  while (ros::ok()) {
+    
+    ros::spinOnce();
+    visualization_msgs::Marker marker;
+    
+    marker.header.frame_id = "/map";
+    marker.header.stamp = ros::Time::now();
+
+    
+    marker.ns = "Delivery_box";
+    marker.id = 0;
+    
+    marker.type = shape;
+    
+    marker.scale.x = 0.5;
+    marker.scale.y = 0.5;
+    marker.scale.z = 0.5;
+    
+
+    
+    marker.color.r = 0.0f;
+    marker.color.g = 0.0f;
+    marker.color.b = 1.0f;
+    marker.color.a = 1.0;
+
+    switch (state)
     {
-       while (ros::ok())
+      case 0: 
         {
-          visualization_msgs::Marker marker;
           
-          marker.header.frame_id = "/map";
-          marker.header.stamp = ros::Time::now();
-          marker.ns = "BOX";
-          marker.id = 0;
-          marker.type = shape;
           marker.action = visualization_msgs::Marker::ADD;
+          
+          n.getParam("/pick_up/x", marker.pose.position.x);
+          
+          n.getParam("/pick_up/w", marker.pose.orientation.w);
+          break;
+        } 
 
-          marker.pose.position.x = po;
-          ROS_INFO("POSITION:%f",po);
-          marker.pose.position.y = 0;
-          marker.pose.position.z = 0;
-          marker.pose.orientation.x = 0.0;
-          marker.pose.orientation.y = 0.0;
-          marker.pose.orientation.z = 0.0;
-          marker.pose.orientation.w = 1.0;
-
-          marker.scale.x = 3.0;
-          marker.scale.y = 3.0;
-          marker.scale.z = 2.0;
-
-          marker.color.r = 0.0f;
-          marker.color.g = 1.0f;
-          marker.color.b = 0.0f;
-          marker.color.a = 1.0;
-          marker.lifetime = ros::Duration(20);
-
-          while (marker_pub.getNumSubscribers() >= 1)
+        case 1:   
           {
-            if (!ros::ok())
-            {
-              return 0;
-            }
-            ROS_WARN_ONCE("Please create a subscriber to the marker");
-            sleep(1);
-          }
-          marker_pub.publish(marker);
-          r.sleep();
-        }
-       
+            sleep(2);
+            
+            marker.action = visualization_msgs::Marker::DELETE;
+            break;
+          } 
 
-       ros::Duration(5.0).sleep();
-      
+        case 2: 
+          {
+            marker.action = visualization_msgs::Marker::DELETE;
+            break;
+          }
+
+        case 3:  
+          {
+            sleep(5);
+            
+            marker.action = visualization_msgs::Marker::ADD;
+            
+            n.getParam("/drop/x", marker.pose.position.x);
+           
+            n.getParam("/drop/w", marker.pose.orientation.w);
+            service_done = true;
+            break;
+          }
+
+    } 
+
+   
+    while (marker_pub.getNumSubscribers() < 1)
+    {
+      if (!ros::ok())
+      {
+        return 0;
+      }
+      ROS_WARN("Please create a subscriber to the marker");
+      sleep(1);
     }
-  }
-  
-  
- 
-}
+
+    
+    marker_pub.publish(marker);
+
+    
+    if (service_done) {
+      ROS_INFO(" Reached");
+      sleep(7);
+      return 0;
+      }
+
+    r.sleep();
+  } 
+
+  return 0;
+} 
