@@ -31,7 +31,7 @@ int main( int argc, char** argv )
     ros::spinOnce();
     visualization_msgs::Marker marker;
     
-    marker.header.frame_id = "/map";
+    marker.header.frame_id = "map";
     marker.header.stamp = ros::Time::now();
 
     
