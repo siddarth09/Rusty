@@ -19,7 +19,7 @@
    
     <arg name="move_forward_only" value="$(arg move_forward_only)"/>
   </include>
-
+  <rosparam command="load" file="$(find rusty)/config/location.yaml" />
   <!-- rviz -->
   
   <arg default="$(find rusty_description)/launch/rusty_display.rviz" name="rvizconfig"/>
