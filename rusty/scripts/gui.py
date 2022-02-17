@@ -1,0 +1,68 @@
+import rospy
+import os
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+import cv2
+import subprocess
+import signal
+
+
+class Gui:
+
+    def __init__(self,master):
+
+        self.main=master
+        self.command="clear"
+        self.status="false"
+        self.title=Label(self.main, text='RUSTY', font=("Times", "68", "bold"))
+        self.title.place(relx=0.5,rely=0.2,anchor=CENTER)
+        self.tagline=Label(self.main, text='Service robot', font=("Times", "18", "bold"))
+        self.tagline.place(relx=0.5,rely=0.3,anchor=CENTER)
+        self.startbutton=Button(self.main, text='START HOME SERVICE', command=self.startcore, font=("Times", "15", "bold"))
+        self.menu=Button(self.main, text='MENU', command=self.display, font=("Times", "15", "bold"))
+        self.menu.place(relx=0.50, rely=0.90, anchor=CENTER)
+        self.exit=Button(self.main, text='Close', command=self.close, font=("Times", "15", "bold"))
+        #self.exit.place(relx=0.70, rely=0.90, anchor=CENTER)
+
+        self.gazebo=Button(self.main, text='View Gazebo', command=self.viewworld, font=("Times", "15", "bold"))
+        
+    def startcore(self):
+        
+        if self.status==True:
+            os.system("roscore")
+
+
+    def display(self):
+        """
+        Displaying options for user to see
+        """
+        self.menu.place_forget()
+        self.gazebo.place(relx=0.2,rely=0.6,anchor=CENTER)
+        self.exit.place(relx=0.70, rely=0.90, anchor=CENTER)
+
+    def viewworld(self):
+        """
+        Function to view different gazebo worlds
+
+        TASK:= add a radio button for the worlds present
+        1.empty.world
+        2.house.world
+        3.godown.world
+
+        @chevula haarvish
+        """
+        os.system("roslaunch rusty_description gazebo.launch")
+    
+    def close(self):
+        signal.signal(signal.SIGINT, exit(1))
+       
+
+if __name__=="__main__":
+    root=Tk()
+    root.title("RUSTY")
+    root.geometry("500x500")
+
+    myrobot=Gui(root)
+    root.mainloop()
+  
