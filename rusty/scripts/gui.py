@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import cv2
-import subprocess
+import subprocess as sub
 import signal
 
 
@@ -26,11 +26,12 @@ class Gui:
         #self.exit.place(relx=0.70, rely=0.90, anchor=CENTER)
 
         self.gazebo=Button(self.main, text='View Gazebo', command=self.viewworld, font=("Times", "15", "bold"))
-        
+        #SLAM 
+        self.slam=Button(self.main, text='KARTO SLAM', command=self.SLAM, font=("Times", "15", "bold"))
     def startcore(self):
         
         if self.status==True:
-            os.system("roscore")
+            os.system("gnome terminal -e roscore")
 
 
     def display(self):
@@ -40,6 +41,7 @@ class Gui:
         self.menu.place_forget()
         self.gazebo.place(relx=0.2,rely=0.6,anchor=CENTER)
         self.exit.place(relx=0.70, rely=0.90, anchor=CENTER)
+        self.slam.place(relx=0.20, rely=0.70, anchor=CENTER)
 
     def viewworld(self):
         """
@@ -52,7 +54,17 @@ class Gui:
 
         @chevula haarvish
         """
-        os.system("roslaunch rusty_description gazebo.launch")
+        world_name="empty"
+        os.system("roslaunch rusty gazebo.launch world_name:={}".format(world_name))
+
+    def viewrviz(self):
+        os.system("roslaunch rusty_description display.launch")
+
+    def SLAM(self):
+        os.system("cd ~/rosworkspace/src/Rusty/rusty/scripts")
+        os.system("chmod +x test_slam.sh")
+        os.system("./test_slam.sh")
+
     
     def close(self):
         signal.signal(signal.SIGINT, exit(1))
