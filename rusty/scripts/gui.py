@@ -24,10 +24,15 @@ class Gui:
         self.menu.place(relx=0.50, rely=0.90, anchor=CENTER)
         self.exit=Button(self.main, text='Close', command=self.close, font=("Times", "15", "bold"))
         #self.exit.place(relx=0.70, rely=0.90, anchor=CENTER)
-
-        self.gazebo=Button(self.main, text='View Gazebo', command=self.viewworld, font=("Times", "15", "bold"))
+        #Gazebo
+        self.gazebo=Button(self.main, text='GAZEBO', command=self.viewworld, font=("Times", "15", "bold"))
         #SLAM 
-        self.slam=Button(self.main, text='KARTO SLAM', command=self.SLAM, font=("Times", "15", "bold"))
+        self.slam=Button(self.main, text='SLAM', command=self.SLAM, font=("Times", "15", "bold"))
+        #RVIZ 
+        self.rviz=Button(self.main, text='RVIZ', command=self.viewrviz, font=("Times", "15", "bold"))
+
+        #navigation
+        self.nav=Button(self.main, text='NAVIGATION', command=self.naavigation, font=("Times", "15", "bold"))
     def startcore(self):
         
         if self.status==True:
@@ -38,11 +43,15 @@ class Gui:
         """
         Displaying options for user to see
         """
+        
         self.menu.place_forget()
-        self.gazebo.place(relx=0.2,rely=0.6,anchor=CENTER)
+        
+        self.tagline.configure(text="CONTROL PANEL")
+        self.gazebo.place(relx=0.2,rely=0.50,anchor=CENTER)
         self.exit.place(relx=0.70, rely=0.90, anchor=CENTER)
-        self.slam.place(relx=0.20, rely=0.70, anchor=CENTER)
-
+        self.slam.place(relx=0.20, rely=0.60, anchor=CENTER)
+        self.rviz.place(relx=0.20,rely=0.70,anchor=CENTER)
+        self.nav.place(relx=0.20,rely=0.80,anchor=CENTER)
     def viewworld(self):
         """
         Function to view different gazebo worlds
@@ -65,7 +74,19 @@ class Gui:
         os.system("chmod +x test_slam.sh")
         os.system("./test_slam.sh")
 
-    
+    def naavigation(self):
+        os.system("cd ~/rosworkspace/src/Rusty/rusty/scripts")
+        os.system("chmod +x navigation.sh")
+        os.system("./navigation.sh")
+        messagebox.showinfo(title='NAVIGATION TEST', message='Please use 2D nav to move the robot in the world')
+
+        """
+        @chevulahaarvish
+
+        call me when you see this
+        """
+
+
     def close(self):
         signal.signal(signal.SIGINT, exit(1))
        
