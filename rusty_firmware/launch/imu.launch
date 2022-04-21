@@ -1,0 +1,8 @@
+<launch>
+
+   <!--THIS LAUNCH FILE IS TO RUN THE IMU NODE TO GET IMU TOPIC-->
+    <node name="imu" pkg="spot_simulation" type="imu.py" output="screen"/>
+    <node name="imu_tf" pkg="spot_simulation" type="tf_imu.py"/>
+    
+
+</launch>
