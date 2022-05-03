@@ -1,0 +1,10 @@
+<launch>
+
+   <!--THIS LAUNCH FILE IS TO RUN THE IMU NODE TO GET IMU TOPIC-->
+    <node name="imu" pkg="rusty_firmware" type="imu.py" />
+    <node name="imu_tf" pkg="rusty_firmware" type="tf_imu.py"/>
+    
+     
+     
+
+</launch>
