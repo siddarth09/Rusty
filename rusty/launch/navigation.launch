@@ -22,7 +22,7 @@
   <include file="$(find rusty)/launch/amcl.launch"/>
   <include file="$(find rusty)/launch/server_bringup.launch"/>
 
-  <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0.10 0 0 0 base_link laser 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0.1 0 0 0 0 base_link laser 100"/>
   <node pkg="tf" type="static_transform_publisher" name="map_base_broadcaster" args="0 0 0.10 0 0 0 map base_link 100"/>
   
 
