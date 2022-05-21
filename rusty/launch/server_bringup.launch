@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<launch>
+	
+	<!-- Start Google Cartographer node with custom configuration file-->
+	<node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args=" 
+		-configuration_directory $(find rusty)/config 
+		-configuration_basename lidar.lua" 
+	      output="screen">
+	</node>
+	
+	<node name="odom_publisher" pkg="rusty" type="odom_pub.py" output="screen"/>
+
+</launch>
