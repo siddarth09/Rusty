@@ -80,7 +80,10 @@ roslaunch rusty navigation.launch
   ```
   
  # RUSTY-robot 
+  
+  Rusty,is a "picking assist AMR", the robots travel to pick locations, where operators deliver goods based on the robot’s needs.
   We are currently in R&D and mainly using it for delivery of documents, beverages for us from the canteen at our college.
+  
   ![WhatsApp Image 2022-05-06 at 7 25 30 PM](https://user-images.githubusercontent.com/60263608/167147295-c9b31de1-1a72-4e1b-ba04-f70c3f695166.jpeg)
   
   
@@ -113,7 +116,7 @@ Here we are using odometry by the laser scanner through hector slam. We are usin
 ```bash
  roslaunch rusty robot_localize.launch
 ```
-  
+
 - #### Navigation
   
   The navigation stack using laser odometry, uses dijkastra's algorithm to create shortest path algorithm. 
@@ -124,4 +127,19 @@ Here we are using odometry by the laser scanner through hector slam. We are usin
   roslaunch rusty navigation.launch 
 ```
   
- 
+NOTE: 
+  > The Hector slam package can be used for implemnting in smaller areas and can use navigation for the same.
+
+### CARTOGRAPHER 
+
+[cartographer]([http://wiki.ros.org/rplidar](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html)) is a system that provides real-time simultaneous localization and mapping (SLAM) in 2D and 3D across multiple platforms and sensor configurations. This project provides Cartographer’s ROS integration. We have added the installation link for the cartographer node.
+  
+#### IMPORTANT: Please create another workspace to compile cartographer, it can be used later by sourceing the workspace in the bashrc file 
+  
+  To run the cartographer package:
+  
+```bash
+  source ~/catkin_ws/install_isolated/setup.bash
+  roslaunch rusty cartographer_slam.launch
+  ```
+After saving the map, you can add your map to navigation launch file and run the navigation 
