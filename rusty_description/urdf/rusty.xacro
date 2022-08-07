@@ -4,7 +4,7 @@
 <xacro:include filename="$(find rusty_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find rusty_description)/urdf/rusty.trans" />
 <xacro:include filename="$(find rusty_description)/urdf/rusty.gazebo" />
-<link name="base_link">
+<link name="rusty_base">
   <inertial>
     <origin rpy="0 0 0" xyz="0.0002544970294304579 -2.7411733823236023e-17 0.08341254857000653"/>
     <mass value="14.333340375312384"/>
@@ -174,47 +174,47 @@
 
 <joint name="RW2" type="continuous">
   <origin rpy="0 0 0" xyz="-0.095 -0.16 0.05"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="RW2_1"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="RW1" type="continuous">
   <origin rpy="0 0 0" xyz="0.095 -0.16 0.05"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="RW1_1"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="LW2" type="continuous">
   <origin rpy="0 0 0" xyz="-0.095 0.16 0.05"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="LW2_1"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="LW1" type="continuous">
   <origin rpy="0 0 0" xyz="0.095 0.16 0.05"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="LW1_1"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rigid10" type="fixed">
   <origin rpy="0 0 0" xyz="0.0 0.0 0.15"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="Holder_1"/>
 </joint>
 
 <joint name="Rigid11" type="fixed">
   <origin rpy="0 0 0" xyz="0.235 0.0 0.135"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="Lidar_1"/>
 </joint>
 
 <joint name="Rigid12" type="fixed">
   <origin rpy="0 0 0" xyz="0.222588 0.012099 0.15"/>
-  <parent link="base_link"/>
+  <parent link="rusty_base"/>
   <child link="Camera_1"/>
 </joint>
 
