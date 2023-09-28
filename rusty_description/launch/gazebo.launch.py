@@ -4,6 +4,10 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution
+import launch
+from launch.substitutions import Command, LaunchConfiguration
+import launch_ros
+from launch_ros.actions import Node
 import os
 import xacro
 from ament_index_python.packages import get_package_share_directory
@@ -11,7 +15,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     share_dir = get_package_share_directory('rusty_description')
-
+    pkg_share = launch_ros.substitutions.FindPackageShare(package='rusty_description').find('rusty_description')
     xacro_file = os.path.join(share_dir, 'urdf', 'rusty.xacro')
     robot_description_config = xacro.process_file(xacro_file)
     robot_urdf = robot_description_config.toxml()
@@ -71,3 +75,6 @@ def generate_launch_description():
         gazebo_client,
         urdf_spawn_node,
     ])
+
+
+
