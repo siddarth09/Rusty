@@ -144,7 +144,7 @@
 				<remapping>~/out:=scan</remapping>
 			</ros>
 			<output_type>sensor_msgs/LaserScan</output_type>
-			<frame_name>laser</frame_name>
+			<frame_name>Lidar_1</frame_name>
 			</plugin>
 		</sensor>
 </gazebo>

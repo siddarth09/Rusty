@@ -36,7 +36,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="0.095 0.16 -0.05" rpy="0 0 0"/>
@@ -57,7 +57,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="-0.095 0.16 -0.05" rpy="0 0 0"/>
@@ -78,7 +78,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="0.095 -0.16 -0.05" rpy="0 0 0"/>
@@ -99,7 +99,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="-0.095 -0.16 -0.05" rpy="0 0 0"/>
@@ -120,7 +120,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.15" rpy="0 0 0"/>
@@ -141,7 +141,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="orange"/>
   </visual>
   <collision>
     <origin xyz="-0.235 -0.0 -0.135" rpy="0 0 0"/>
@@ -162,7 +162,7 @@
     <geometry>
       <mesh filename="file://$(find rusty_description)/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="red"/>
   </visual>
   <collision>
     <origin xyz="-0.222588 -0.012099 -0.15" rpy="0 0 0"/>
@@ -207,7 +207,7 @@
 </joint>
 
 <joint name="laser" type="fixed">
-  <origin xyz="0.235 0.0 0.135" rpy="0 0 0"/>
+  <origin xyz="0.235 0.0 0.138" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Lidar_1"/>
 </joint>
