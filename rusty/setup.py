@@ -23,6 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'gps_node = rusty.gps:main'
         ],
     },
 )
