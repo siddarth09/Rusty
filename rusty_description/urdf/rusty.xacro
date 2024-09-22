@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="rusty" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="/home/siddarth/ros2ws/src/Rusty/rusty_description/urdf/materials.xacro" />
-<!-- <xacro:include filename="/home/siddarth/ros2ws/src/Rusty/rusty_description/urdf/rusty.trans" /> -->
-<!-- <xacro:include filename="/home/siddarth/ros2ws/src/Rusty/rusty_description/urdf/rusty.gazebo" /> -->
+<xacro:include filename="$(find rusty_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rusty_description)/urdf/rusty.trans" />
+<xacro:include filename="$(find rusty_description)/urdf/rusty.gazebo" />
 <link name="base_link">
   <inertial>
     <origin xyz="0.0002544970294304579 -2.7411733823236023e-17 0.08341254857000653" rpy="0 0 0"/>
@@ -13,14 +13,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -34,14 +34,14 @@
   <visual>
     <origin xyz="0.095 0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0.095 0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/RW2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -55,14 +55,14 @@
   <visual>
     <origin xyz="-0.095 0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.095 0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/RW1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -76,14 +76,14 @@
   <visual>
     <origin xyz="0.095 -0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="0.095 -0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/LW2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -97,14 +97,14 @@
   <visual>
     <origin xyz="-0.095 -0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="black"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.095 -0.16 -0.05" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/LW1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -118,14 +118,14 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.15" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="blue"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.15" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/Holder_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -139,14 +139,14 @@
   <visual>
     <origin xyz="-0.235 -0.0 -0.135" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="orange"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.235 -0.0 -0.135" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -160,14 +160,14 @@
   <visual>
     <origin xyz="-0.222588 -0.012099 -0.15" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="red"/>
+    <material name="silver"/>
   </visual>
   <collision>
     <origin xyz="-0.222588 -0.012099 -0.15" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file:///home/siddarth/ros2ws/src/Rusty/rusty_description/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find rusty_description)/meshes/Camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -176,28 +176,28 @@
   <origin xyz="-0.095 -0.16 0.05" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="RW2_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="RW1" type="continuous">
   <origin xyz="0.095 -0.16 0.05" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="RW1_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="LW2" type="continuous">
   <origin xyz="-0.095 0.16 0.05" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="LW2_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="LW1" type="continuous">
   <origin xyz="0.095 0.16 0.05" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="LW1_1"/>
-  <axis xyz="0.0 0.0 1.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rigid 10" type="fixed">
@@ -207,7 +207,7 @@
 </joint>
 
 <joint name="laser" type="fixed">
-  <origin xyz="0.235 0.0 0.138" rpy="0 0 0"/>
+  <origin xyz="0.235 0.0 0.135" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Lidar_1"/>
 </joint>
