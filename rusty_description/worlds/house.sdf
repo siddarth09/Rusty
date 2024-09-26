@@ -1953,15 +1953,15 @@
       <pose>2.30249 -4.27694 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>325 142000000</sim_time>
-      <real_time>549 605711355</real_time>
-      <wall_time>1642423279 755548018</wall_time>
-      <iterations>325142</iterations>
+      <sim_time>382 772000000</sim_time>
+      <real_time>59 16190849</real_time>
+      <wall_time>1726973269 505132173</wall_time>
+      <iterations>57630</iterations>
       <model name='Dumpster'>
-        <pose>14.0534 5.94057 0.001369 -2e-06 0 0</pose>
+        <pose>14.0534 5.94057 0.001372 0 -4e-06 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>14.0534 5.94057 0.001369 -2e-06 0 0</pose>
+          <pose>14.0534 5.94057 0.001372 0 -4e-06 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
@@ -2003,8 +2003,8 @@
         <link name='link'>
           <pose>-24.5239 0.373048 0.149 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 1.9e-05 -0 -0.000128 -2e-06 0</acceleration>
-          <wrench>-1e-06 3.8e-05 -1e-06 0 -0 0</wrench>
+          <acceleration>-0 -1.9e-05 0 0.000128 -2e-06 0</acceleration>
+          <wrench>-1e-06 -3.8e-05 1e-06 0 -0 0</wrench>
         </link>
       </model>
       <model name='fire_hydrant'>
@@ -2028,7 +2028,7 @@
         </link>
       </model>
       <model name='myhouse'>
-        <pose>-3.23928 -1.27261 0 0 -0 0</pose>
+        <pose>-3.2393 -1.27261 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Wall_0'>
           <pose>-28.1338 1.75143 0 0 0 -1.5708</pose>
@@ -2122,13 +2122,13 @@
         </link>
       </model>
       <model name='person_standing'>
-        <pose>2.3025 -4.27694 -1e-06 -1e-06 1e-06 -0.000132</pose>
+        <pose>2.30249 -4.27694 -0 1e-06 -1e-06 4e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.3025 -4.27694 -1e-06 -1e-06 1e-06 -0.000132</pose>
+          <pose>2.30249 -4.27694 -0 1e-06 -1e-06 4e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>1.61711 1.13763 -1.48242 1.93723 1.45227 3.09349</acceleration>
-          <wrench>129.369 91.0101 -118.594 0 -0 0</wrench>
+          <acceleration>-1.54905 1.08966 -1.8261 1.98327 -1.51897 -3.0985</acceleration>
+          <wrench>-123.924 87.1726 -146.088 0 -0 0</wrench>
         </link>
       </model>
       <model name='postbox'>
@@ -2139,6 +2139,40 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='rusty'>
+        <pose>-0.000147 0.014124 -8.9e-05 2e-06 7e-06 0.036842</pose>
+        <scale>1 1 1</scale>
+        <link name='LW1_1'>
+          <pose>0.088896 0.177513 0.049937 3e-05 -0.033385 0.036843</pose>
+          <velocity>-0.00023 0.000798 -0.011548 -0.006694 -8.5e-05 0.000181</velocity>
+          <acceleration>-0.229421 1.10344 -23.1483 -0.23701 -0.095065 -0.906954</acceleration>
+          <wrench>-0.041893 0.201493 -4.227 0 -0 0</wrench>
+        </link>
+        <link name='LW2_1'>
+          <pose>-0.100975 0.170514 0.049937 3.6e-05 -0.001521 0.036844</pose>
+          <velocity>-0.000222 0.000643 -0.01116 -0.008185 -0.00014 0.000285</velocity>
+          <acceleration>-0.228622 1.00196 -22.5328 -2.802 -0.324874 -0.677786</acceleration>
+          <wrench>-0.041748 0.182963 -4.11461 0 -0 0</wrench>
+        </link>
+        <link name='RW1_1'>
+          <pose>0.100682 -0.142267 0.049937 -4.3e-05 0.001663 0.036844</pose>
+          <velocity>0.000229 -9.6e-05 -0.01173 0.011522 0.000587 0.000263</velocity>
+          <acceleration>0.260138 -0.809783 -23.3331 0.710162 1.42527 -0.742793</acceleration>
+          <wrench>0.047503 -0.14787 -4.26075 0 -0 0</wrench>
+        </link>
+        <link name='RW2_1'>
+          <pose>-0.089189 -0.149265 0.049937 -4e-05 0.001726 0.036844</pose>
+          <velocity>0.000237 -0.000286 -0.011456 0.010733 0.000558 0.000219</velocity>
+          <acceleration>0.271579 -0.903369 -23.0369 -2.00654 1.43297 -0.787038</acceleration>
+          <wrench>0.049592 -0.16496 -4.20665 0 -0 0</wrench>
+        </link>
+        <link name='base_link'>
+          <pose>-0.000147 0.014124 -8.9e-05 2e-06 7e-06 0.036842</pose>
+          <velocity>-2.3e-05 0.000224 -0.004838 0.000317 0.000174 0.000606</velocity>
+          <acceleration>-0.000336 -0.001789 -9.55901 -0.076843 -0.018809 -0.026438</acceleration>
+          <wrench>-0.013453 -0.071626 -382.811 0 -0 0</wrench>
         </link>
       </model>
       <model name='table'>
@@ -2167,10 +2201,591 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>8.57934 -7.13195 4.05589 0 0.275643 2.3562</pose>
+        <pose>-8.4773 4.98824 4.52523 -0 0.323644 -0.574981</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    <audio>
+      <device>default</device>
+    </audio>
+    <model name='rusty'>
+      <link name='base_link'>
+        <inertial>
+          <pose>0.000187 1.7e-05 0.134183 0 -0 0</pose>
+          <mass>40.0471</mass>
+          <inertia>
+            <ixx>0.396803</ixx>
+            <ixy>-0.000160667</ixy>
+            <ixz>1.07487e-05</ixz>
+            <iyy>0.900506</iyy>
+            <iyz>3.01439e-06</iyz>
+            <izz>1.12391</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__Holder_1_collision_1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/Holder_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__Camera_1_collision_2'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/Camera_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__Lidar_1_collision_3'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/Lidar_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__Holder_1_visual_1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/Holder_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__Camera_1_visual_2'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/Camera_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__Lidar_1_visual_3'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/Lidar_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <gravity>1</gravity>
+        <self_collide>1</self_collide>
+        <self_collide>1</self_collide>
+        <sensor name='camera' type='camera'>
+          <update_rate>30</update_rate>
+          <camera name='head'>
+            <horizontal_fov>1.39626</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+          <pose>0.222588 0.012099 0.15 0 -0 0</pose>
+        </sensor>
+        <self_collide>1</self_collide>
+        <sensor name='ydlidar' type='ray'>
+          <always_on>1</always_on>
+          <visualize>0</visualize>
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.57</min_angle>
+                <max_angle>1.57</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.05</min>
+              <max>20</max>
+              <resolution>0.015</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='scan' filename='libgazebo_ros_ray_sensor.so'>
+            <ros>
+              <remapping>~/out:=scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>Lidar_1</frame_name>
+          </plugin>
+          <pose>0.235 0 0.135 0 -0 0</pose>
+        </sensor>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='LW1' type='revolute'>
+        <pose relative_to='base_link'>0.095 0.16 0.05 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>LW1_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='LW1_1'>
+        <pose relative_to='LW1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.0125 0 0 -0 0</pose>
+          <mass>0.182605</mass>
+          <inertia>
+            <ixx>0.000124</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000228</iyy>
+            <iyz>0</iyz>
+            <izz>0.000124</izz>
+          </inertia>
+        </inertial>
+        <collision name='LW1_1_collision'>
+          <pose>-0.095 -0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/LW1_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='LW1_1_visual'>
+          <pose>-0.095 -0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/LW1_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='LW2' type='revolute'>
+        <pose relative_to='base_link'>-0.095 0.16 0.05 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>LW2_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='LW2_1'>
+        <pose relative_to='LW2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.0125 0 0 -0 0</pose>
+          <mass>0.182605</mass>
+          <inertia>
+            <ixx>0.000124</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000228</iyy>
+            <iyz>0</iyz>
+            <izz>0.000124</izz>
+          </inertia>
+        </inertial>
+        <collision name='LW2_1_collision'>
+          <pose>0.095 -0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/LW2_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='LW2_1_visual'>
+          <pose>0.095 -0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/LW2_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='RW1' type='revolute'>
+        <pose relative_to='base_link'>0.095 -0.16 0.05 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>RW1_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='RW1_1'>
+        <pose relative_to='RW1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0 -0.0125 0 0 -0 0</pose>
+          <mass>0.182605</mass>
+          <inertia>
+            <ixx>0.000124</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000228</iyy>
+            <iyz>0</iyz>
+            <izz>0.000124</izz>
+          </inertia>
+        </inertial>
+        <collision name='RW1_1_collision'>
+          <pose>-0.095 0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/RW1_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='RW1_1_visual'>
+          <pose>-0.095 0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/RW1_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='RW2' type='revolute'>
+        <pose relative_to='base_link'>-0.095 -0.16 0.05 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>RW2_1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='RW2_1'>
+        <pose relative_to='RW2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.0125 0 0 -0 0</pose>
+          <mass>0.182605</mass>
+          <inertia>
+            <ixx>0.000124</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000228</iyy>
+            <iyz>0</iyz>
+            <izz>0.000124</izz>
+          </inertia>
+        </inertial>
+        <collision name='RW2_1_collision'>
+          <pose>0.095 0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/RW2_1.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='RW2_1_visual'>
+          <pose>0.095 0.16 -0.05 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/siddarth/ros2ws/install/rusty_description/share/rusty_description/meshes/RW2_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='control' filename='libgazebo_ros_control.so'/>
+      <static>0</static>
+      <plugin name='skid_steer_drive' filename='libgazebo_ros_diff_drive.so'>
+        <ros>
+          <remapping>cmd_vel:=cmd_vel</remapping>
+          <remapping>odom:=odom</remapping>
+        </ros>
+        <update_rate>500</update_rate>
+        <num_wheel_pairs>2</num_wheel_pairs>
+        <left_joint>LW1</left_joint>
+        <right_joint>RW1</right_joint>
+        <left_joint>LW2</left_joint>
+        <right_joint>RW2</right_joint>
+        <wheel_separation>0.300</wheel_separation>
+        <wheel_separation>0.300</wheel_separation>
+        <wheel_diameter>0.100</wheel_diameter>
+        <wheel_diameter>0.100</wheel_diameter>
+        <max_wheel_torque>20</max_wheel_torque>
+        <max_wheel_acceleration>1.0</max_wheel_acceleration>
+        <publish_odom>1</publish_odom>
+        <publish_odom_tf>1</publish_odom_tf>
+        <publish_wheel_tf>1</publish_wheel_tf>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
   </world>
 </sdf>

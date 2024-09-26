@@ -114,7 +114,7 @@
 </plugin>
 </gazebo>
 
-<gazebo reference="Lidar_1">
+<gazebo reference="laser">
 		<sensor name="ydlidar" type="ray">
 			<always_on>true</always_on>
 			<visualize>false</visualize>
@@ -171,6 +171,7 @@
           <mean>0.0</mean>
           <stddev>0.007</stddev>
         </noise>
+
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>

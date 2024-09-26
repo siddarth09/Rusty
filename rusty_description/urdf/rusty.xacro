@@ -212,7 +212,7 @@
   <child link="Lidar_1"/>
 </joint>
 
-<joint name="Rigid 12" type="fixed">
+<joint name="camera" type="fixed">
   <origin xyz="0.222588 0.012099 0.15" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Camera_1"/>
