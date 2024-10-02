@@ -16,7 +16,8 @@ find_package(geometry_msgs REQUIRED)
 
 
 set(msg_files
-  "msg/GPSmsg.msg"
+  "msg/GPSmsg.msg",
+  "msg/Bayes.msg"
 
 )
 
