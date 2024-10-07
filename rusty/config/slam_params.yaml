@@ -15,7 +15,7 @@ slam_toolbox:
     base_frame: base_link
     scan_topic: /scan
     use_map_saver: true
-    mode: mapping #localization
+    mode: localization #localization
 
     # if you'd like to immediately start continuing a map at a given pose
     # or at the dock, but they are mutually exclusive, if pose is given
@@ -23,7 +23,7 @@ slam_toolbox:
     #map_file_name: test_steve
     # map_start_pose: [0.0, 0.0, 0.0]
     #map_start_at_dock: true
-
+    map_file_name: "/home/siddarth/ros2ws/src/Rusty/rusty/maps/house.yaml"
     debug_logging: false
     throttle_scans: 1
     transform_publish_period: 0.02 #if 0 never publishes odometry

@@ -24,7 +24,8 @@ setup(
     entry_points={
         'console_scripts': [
             'gps_node = rusty.gps:main',
-            'bayes_node=rusty.bayes_filter:main'
+            'bayes_node=rusty.bayes_filter:main',
+            'kalman_f = rusty.kalman_filter:main'
         ],
     },
 )
