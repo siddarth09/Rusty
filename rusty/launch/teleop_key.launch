@@ -1,4 +1,0 @@
-<launch>
-<node pkg="rusty" type="teleop_key.py" name="rover_control"  output="screen">
-  </node>
-</launch>

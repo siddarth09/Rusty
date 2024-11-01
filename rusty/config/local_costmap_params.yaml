@@ -1,0 +1,3 @@
+local_costmap:
+  global_frame: odom
+  rolling_window: true
