@@ -120,7 +120,7 @@ class GPSPublisher(Node):
                 # Populate GPSmsg fields
                 gps_msg.header = Header()
                 gps_msg.header.stamp = self.get_clock().now().to_msg()
-                gps_msg.header.frame_id = 'GPS1_Frame'
+                gps_msg.header.frame_id = 'gps'
                 
                 gps_msg.latitude = latitude
                 gps_msg.longitude = longitude

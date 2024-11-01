@@ -23,9 +23,11 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Get the urdf file
+   
     urdf_path = os.path.join(
         get_package_share_directory('rusty_description'),
-        'urdf','rusty.urdf'
+        'urdf',
+        'rusty.sdf'
     )
 
     # Launch configuration variables specific to simulation
@@ -45,12 +47,36 @@ def generate_launch_description():
         package='ros_gz_sim',
         executable='create',
         arguments=[
-            
+            '-name', 'rusty',
             '-file', urdf_path,
             '-x', x_pose,
             '-y', y_pose,
             '-z', '0.01'
         ],
+        output='screen',
+    )
+
+    bridge_params = os.path.join(
+        get_package_share_directory('rusty_description'),
+        'config',
+        'gz_params.yaml'
+    )
+
+    start_gazebo_ros_bridge_cmd = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}',
+        ],
+        output='screen',
+    )
+
+    start_gazebo_ros_image_bridge_cmd = Node(
+        package='ros_gz_image',
+        executable='image_bridge',
+        arguments=['/camera/image_raw'],
         output='screen',
     )
 
@@ -62,6 +88,7 @@ def generate_launch_description():
 
     # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)
-    print("RUSTY LAUNCHED")
+    ld.add_action(start_gazebo_ros_bridge_cmd)
+    ld.add_action(start_gazebo_ros_image_bridge_cmd)
 
     return ld

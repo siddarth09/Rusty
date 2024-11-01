@@ -13,6 +13,9 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+        (os.path.join('share', package_name, 'config'), glob('config/*.lua'))
+        
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -25,7 +28,8 @@ setup(
         'console_scripts': [
             'gps_node = rusty.gps:main',
             'bayes_node=rusty.bayes_filter:main',
-            'kalman_f = rusty.kalman_filter:main'
+            'kalman_f = rusty.kalman_filter:main',
+            'ekf = rusty.ekf_for_gps:main',
         ],
     },
 )

@@ -1,49 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.9">
-<world name="default">
-        <physics name="1ms" type="ignored">
-            <max_step_size>0.001</max_step_size>
-            <real_time_factor>1.0</real_time_factor>
-        </physics>
-        <plugin
-            filename="gz-sim-physics-system"
-            name="gz::sim::systems::Physics">
-        </plugin>
-        <plugin
-            filename="gz-sim-user-commands-system"
-            name="gz::sim::systems::UserCommands">
-        </plugin>
-        <plugin
-            filename="gz-sim-scene-broadcaster-system"
-            name="gz::sim::systems::SceneBroadcaster">
-        </plugin>
-        <plugin filename="gz-sim-imu-system"
-              name="gz::sim::systems::Imu">
-        </plugin>  
-
-      
-        <plugin
-          filename="gz-sim-sensors-system"
-          name="gz::sim::systems::Sensors">
-          <render_engine>ogre2</render_engine>
-        </plugin>
-
-
-        <light type="directional" name="sun">
-            <cast_shadows>true</cast_shadows>
-            <pose>0 0 10 0 0 0</pose>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.2 0.2 0.2 1</specular>
-            <attenuation>
-                <range>1000</range>
-                <constant>0.9</constant>
-                <linear>0.01</linear>
-                <quadratic>0.001</quadratic>
-            </attenuation>
-            <direction>-0.5 0.1 -0.9</direction>
-        </light>
-      
-  <model name="rusty_v1">
+<sdf version="1.5">
+    <model name="rusty_v1">  
     <link name="base_link">
       <inertial>
         <mass>0.0001</mass>
@@ -56,27 +13,53 @@
           <izz>1e-09</izz>
         </inertia>
       </inertial>
-      <sensor name="imu_sensor" type="imu">
-        <always_on>1</always_on>
-        <update_rate>1</update_rate>
-        <visualize>true</visualize>
+       <sensor name="rusty_imu" type="imu">
+        <always_on>true</always_on>
+        <update_rate>200</update_rate>
         <topic>imu</topic>
-      </sensor>
-    </link>
-    <link name="base_link_1">
-      <pose relative_to="__model__">0.0 0.0 0.025 0.0 -0.0 0.0</pose>
-      <inertial>
-        <pose>0.0002544970294304579 -2.7411733823236023e-17 0.05841254857000653 0.0 -0.0 0.0</pose>
-        <mass>14.333340375312384</mass>
-        <inertia>
-          <ixx>0.17330689589626652</ixx>
-          <ixy>3.770856504009189e-16</ixy>
-          <ixz>-0.00017122611970999112</ixz>
-          <iyy>0.37322862931138256</iyy>
-          <iyz>8.481746606555297e-18</iyz>
-          <izz>0.49091749554724184</izz>
-        </inertia>
-      </inertial>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>2e-4</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>2e-4</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>2e-4</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>1.7e-2</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>1.7e-2</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>1.7e-2</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor> 
       <visual name="base_link_1__base_link_visual">
         <geometry>
           <mesh>
@@ -86,7 +69,7 @@
         </geometry>
       </visual>
       <collision name="base_link_1__base_link_collision">
-        <pose relative_to="__model__">0.0 0.0 0.0875 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">0.0 0.0 0.0875 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.125 0.34 0.5</size>
@@ -94,8 +77,11 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="rw1_1">
-      <pose relative_to="__model__">-0.048075934676033716 0.16599272944775692 0.035152659990737724 6.938893903907236e-18 -0.0 0.0</pose>
+      <pose relative_to="base_link">-0.048075934676033716 0.16599272944775692 0.035152659990737724 6.938893903907236e-18 -0.0 0.0</pose>
       <inertial>
         <pose>0.1430759346760337 -0.3384927294477569 0.014847340009262286 -6.938893903907236e-18 -0.0 0.0</pose>
         <mass>0.1826050729899068</mass>
@@ -117,7 +103,7 @@
         </geometry>
       </visual>
       <collision name="rw1_1__rw1_collision">
-        <pose relative_to="__model__">0.095 -0.1725 0.05 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">0.095 -0.1725 0.05 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.10000000000000003 0.025 0.10000000000000002</size>
@@ -125,8 +111,11 @@
         </geometry>
       </collision>
     </link>
+
+
+
     <link name="lw1_1">
-      <pose relative_to="__model__">-0.0029629661386292127 -0.06704285733682042 0.04257306317273629 0.0 -0.0 0.0</pose>
+      <pose relative_to="base_link">-0.0029629661386292127 -0.06704285733682042 0.04257306317273629 0.0 -0.0 0.0</pose>
       <inertial>
         <pose>0.09796296613862925 0.23954285733682046 0.007426936827263732 0.0 -0.0 0.0</pose>
         <mass>0.1826050729899069</mass>
@@ -148,7 +137,7 @@
         </geometry>
       </visual>
       <collision name="lw1_1__lw1_collision">
-        <pose relative_to="__model__">0.095 0.1725 0.05000000000000001 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">0.095 0.1725 0.05000000000000001 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.10000000000000005 0.025 0.10000000000000003</size>
@@ -156,8 +145,10 @@
         </geometry>
       </collision>
     </link>
+
+
     <link name="rw2_1">
-      <pose relative_to="__model__">0.05430130702462311 0.165 0.0004577485078454657 0.0 -0.0 0.0</pose>
+      <pose relative_to="base_link">0.05430130702462311 0.165 0.0004577485078454657 0.0 -0.0 0.0</pose>
       <inertial>
         <pose>-0.1493013070246231 -0.3375 0.049542251492154535 0.0 -0.0 0.0</pose>
         <mass>0.18260507298990683</mass>
@@ -179,7 +170,7 @@
         </geometry>
       </visual>
       <collision name="rw2_1__rw2_collision">
-        <pose relative_to="__model__">-0.095 -0.1725 0.05 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">-0.095 -0.1725 0.05 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.10000000000000003 0.025 0.10000000000000005</size>
@@ -187,8 +178,10 @@
         </geometry>
       </collision>
     </link>
+
+
     <link name="lw2_1">
-      <pose relative_to="__model__">0.06544107043140138 -0.18624680235844282 -0.0338269179372204 2.7755575615628914e-17 -0.0 0.0</pose>
+      <pose relative_to="base_link">0.06544107043140138 -0.18624680235844282 -0.0338269179372204 2.7755575615628914e-17 -0.0 0.0</pose>
       <inertial>
         <pose>-0.16044107043140138 0.35874680235844275 0.08382691793722039 -2.7755575615628914e-17 -0.0 0.0</pose>
         <mass>0.18260507298990683</mass>
@@ -210,7 +203,7 @@
         </geometry>
       </visual>
       <collision name="lw2_1__lw2_collision">
-        <pose relative_to="__model__">-0.095 0.1725 0.04999999999999999 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">-0.095 0.1725 0.04999999999999999 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.10000000000000003 0.025 0.1</size>
@@ -218,8 +211,9 @@
         </geometry>
       </collision>
     </link>
+
     <link name="holder_1">
-      <pose relative_to="__model__">0.0 0.0 -0.175 0.0 -0.0 0.0</pose>
+      <pose relative_to="base_link">0.0 0.0 -0.175 0.0 -0.0 0.0</pose>
       <inertial>
         <pose>-4.445233212745621e-17 0.0 0.3375 0.0 -0.0 0.0</pose>
         <mass>25.69775961700859</mass>
@@ -241,7 +235,7 @@
         </geometry>
       </visual>
       <collision name="holder_1__holder_collision">
-        <pose relative_to="__model__">0.0 0.0 0.1625 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">0.0 0.0 0.1625 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.025 0.28079487118715435 0.4739759520955434</size>
@@ -249,8 +243,9 @@
         </geometry>
       </collision>
     </link>
+
     <link name="lidar_1">
-      <pose relative_to="__model__">-0.1750000035017729 0.0 0.025 0.0 -0.0 0.0</pose>
+      <pose relative_to="base_link">-0.1750000035017729 0.0 0.025 0.0 -0.0 0.0</pose>
       <inertial>
         <pose>0.41740216277899855 -0.00023091322011423596 0.11500000000000002 0.0 -0.0 0.0</pose>
         <mass>0.008257286244679606</mass>
@@ -272,44 +267,45 @@
         </geometry>
       </visual>
       <collision name="lidar_1__lidar_collision">
-        <pose relative_to="__model__">0.2436204795744473 -0.0002689191593257145 0.139999999999608 0.031185268471219173 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">0.2436204795744473 -0.0002689191593257145 0.139999999999608 0.031185268471219173 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.01 0.035608988160144975 0.018359642015575127</size>
           </box>
         </geometry>
       </collision>
-      <sensor name='lidar' type='gpu_lidar'>"
-       
-        <topic>lidar</topic>
-        <update_rate>10</update_rate>
-        <ray>
-            <scan>
-                <horizontal>
-                    <samples>640</samples>
-                    <resolution>1</resolution>
-                    <min_angle>-1.396263</min_angle>
-                    <max_angle>1.396263</max_angle>
-                </horizontal>
-                <vertical>
-                    <samples>1</samples>
-                    <resolution>0.01</resolution>
-                    <min_angle>0</min_angle>
-                    <max_angle>0</max_angle>
-                </vertical>
-            </scan>
-            <range>
-                <min>0.08</min>
-                <max>10.0</max>
-                <resolution>0.01</resolution>
-            </range>
-        </ray>
-        <always_on>1</always_on>
+      <sensor name="rusty_lidar" type="gpu_lidar">
+        <always_on>true</always_on>
         <visualize>true</visualize>
+        <pose>-0.064 0 0.121 0 0 0</pose>
+        <update_rate>5</update_rate>
+        <topic>scan</topic>
+        <gz_frame_id>lidar_1</gz_frame_id>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0.000000</min_angle>
+              <max_angle>6.280000</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.120000</min>
+            <max>3.5</max>
+            <resolution>0.015000</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </lidar>
       </sensor>
     </link>
+    
     <link name="camera_1">
-      <pose relative_to="__model__">0.005088479046599446 0.004599132655587397 0.0 0.0 -0.0 6.123233995736766e-17</pose>
+      <pose relative_to="base_link">0.005088479046599446 0.004599132655587397 0.0 0.0 -0.0 6.123233995736766e-17</pose>
       <inertial>
         <pose>0.23253901869823768 0.08250000000000439 0.12975699657340425 0.0 -0.0 -6.123233995736766e-17</pose>
         <mass>0.007791207915918992</mass>
@@ -331,7 +327,7 @@
         </geometry>
       </visual>
       <collision name="camera_1__body1_collision">
-        <pose relative_to="__model__">0.23758847904659944 0.08709913265558741 0.13 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="base_link">0.23758847904659944 0.08709913265558741 0.13 -0.0 -1.5707963267948966 0</pose>
         <geometry>
           <box>
             <size>0.01 0.035 0.015</size>
@@ -341,95 +337,100 @@
 
       <!-- Camera Sensor -->
       <sensor name="camera" type="camera">
-          <camera>
-            <horizontal_fov>1.047</horizontal_fov>
-            <image>
-              <width>320</width>
-              <height>240</height>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>100</far>
-            </clip>
-          </camera>
-          <always_on>1</always_on>
-          <update_rate>30</update_rate>
-          <visualize>true</visualize>
-          <topic>image</topic>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <update_rate>30</update_rate>
+        <topic>camera/image_raw</topic>
+        <gz_frame_id>camera_1</gz_frame_id>
+        <camera name="intel_realsense_r200">
+          <camera_info_topic>camera/camera_info</camera_info_topic>
+          <horizontal_fov>1.02974</horizontal_fov>
+          <image>
+            <width>1920</width>
+            <height>1080</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <!-- Noise is sampled independently per pixel on each frame.
+                  That pixel's noise value is added to each of its color
+                  channels, which at that point lie in the range [0,1]. -->
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
       </sensor>
-      <sensor name="depth_camera1" type="depth_camera">
-          
-          <update_rate>10</update_rate>
-          <topic>depth</topic>
-          <camera>
-            <horizontal_fov>1.05</horizontal_fov>
-            <image>
-              <width>256</width>
-              <height>256</height>
-              <format>R_FLOAT32</format>
-            </image>
-            <clip>
-              <near>0.1</near>
-              <far>10.0</far>
-            </clip>
-          </camera>
-        </sensor>
     </link>
+
+
+   <!--JOINTS-->
+
+
     <joint name="rw2" type="continuous">
-      <pose relative_to="__model__">-0.095 -0.16 0.05 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+      <pose relative_to="base_link">-0.095 -0.16 0.05 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>rw2_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <xyz expressed_in="base_link">0.0 -1.0 0.0</xyz>
       </axis>
     </joint>
+
     <joint name="rw1" type="continuous">
-      <pose relative_to="__model__">0.095 -0.16 0.05 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+      <pose relative_to="base_link">0.095 -0.16 0.05 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>rw1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
+        <xyz expressed_in="base_link">0.0 1.0 0.0</xyz>
       </axis>
     </joint>
+
+
     <joint name="lw2" type="continuous">
-      <pose relative_to="__model__">-0.095 0.16 0.05000000000000002 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+      <pose relative_to="base_link">-0.095 0.16 0.05000000000000002 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>lw2_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <xyz expressed_in="base_link">0.0 -1.0 0.0</xyz>
       </axis>
     </joint>
+
+
     <joint name="lw1" type="continuous">
-      <pose relative_to="__model__">0.09500000000000001 0.16 0.05000000000000002 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+      <pose relative_to="base_link">0.09500000000000001 0.16 0.05000000000000002 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>lw1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
+        <xyz expressed_in="base_link">0.0 1.0 0.0</xyz>
       </axis>
     </joint>
-    <joint name="rigid_10" type="fixed">
-      <pose relative_to="__model__">0.0 0.0 0.15 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+
+
+    <joint name="holder" type="fixed">
+      <pose relative_to="base_link">0.0 0.0 0.15 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>holder_1</child>
       <axis/>
     </joint>
+
     <joint name="lidar" type="fixed">
-      <pose relative_to="__model__">0.235 0.0 0.135 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+      <pose relative_to="base_link">0.235 0.0 0.135 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>lidar_1</child>
       <axis/>
     </joint>
+
+    
     <joint name="camera" type="fixed">
-      <pose relative_to="__model__">0.23758847904659944 0.08709913265558741 0.125 0.0 -0.0 0.0</pose>
-      <parent>base_link_1</parent>
+      <pose relative_to="base_link">0.23758847904659944 0.08709913265558741 0.125 0.0 -0.0 0.0</pose>
+      <parent>base_link</parent>
       <child>camera_1</child>
       <axis/>
     </joint>
-    <joint name="base_link_joint" type="fixed">
-      <parent>base_link</parent>
-      <child>base_link_1</child>
-      <axis/>
-    </joint>
+    
 
     <plugin
        filename="ignition-gazebo-diff-drive-system"
@@ -449,19 +450,27 @@
      <min_linear_velocity>-0.5</min_linear_velocity>
      <max_angular_velocity>1</max_angular_velocity>
      <topic>cmd_vel</topic>
+     <odom_topic>odom</odom_topic>
+     <frame_id>odom</frame_id>
+     <tf_topic>/tf</tf_topic>
+     <odom_publisher_frequency>30</odom_publisher_frequency>
+     <child_frame_id>base_link</child_frame_id>
+
      <!-- <topic>/cmd_vel</topic>
      <odom_topic>/odom</odom_topic>
      <tf_topic>/tf</tf> -->
                 
-      </plugin>
+    </plugin>
     
-    
-
-      
-
-
-       
+    <plugin filename="gz-sim-joint-state-publisher-system"
+      name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic>
+      <!-- <update_rate>30</update_rate> -->
+      <joint_name>lw1</joint_name>
+      <joint_name>lw2</joint_name>
+      <joint_name>rw1</joint_name>
+      <joint_name>rw2</joint_name>
+    </plugin>     
 
   </model>
-</world>
 </sdf>

@@ -18,12 +18,13 @@ find_package(geometry_msgs REQUIRED)
 set(msg_files
   "msg/GPSmsg.msg"
   "msg/Bayes.msg"
+  "msg/VnHundred.msg"
 
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files} 
-  DEPENDENCIES geometry_msgs std_msgs 
+  DEPENDENCIES geometry_msgs std_msgs sensor_msgs
 )
 # uncomment the following section in order to fill in
 # further dependencies manually.

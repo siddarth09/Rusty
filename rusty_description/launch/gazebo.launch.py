@@ -7,7 +7,7 @@ from launch_ros.descriptions import ParameterValue
 
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='rusty_description').find('rusty_description')
-    world_path = '/home/siddarth/ros2ws/src/Rusty/rusty_description/worlds/house.sdf'
+    world_path = '/home/siddarth/ros2ws/src/Rusty/rusty_description/worlds/base_station.sdf'
     default_model_path = os.path.join(pkg_share, 'urdf/rusty.xacro')
     use_sim_time = LaunchConfiguration('use_sim_time')
     robot_state_publisher_node = launch_ros.actions.Node(
